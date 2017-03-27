@@ -8,6 +8,8 @@ and samples. The runtime is under SteamVR in Tools on Steam.
 
 ### Documentation
 
+Documentation for the Viral Project is at [Github Wiki](https://github.com/DayVidZhou/ViralLabsWiki/wiki)
+
 Documentation for the API is available on the [Github Wiki](https://github.com/ValveSoftware/openvr/wiki/API-Documentation)
 
 More information on OpenVR and SteamVR can be found on http://steamvr.com
