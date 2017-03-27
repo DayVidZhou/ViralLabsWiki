@@ -1,0 +1,8 @@
+﻿  Generating MOC compilation driver_sample_autogen/moc_compilation.cpp
+  Building Custom Rule C:/openvr-master/samples/driver_sample/CMakeLists.txt
+  CMake does not need to re-run because C:/openvr-master/samples/build/driver_sample/CMakeFiles/generate.stamp is up-to-date.
+  driverlog.cpp
+  driver_sample.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\um\winnt.h(12150): error C2467: illegal declaration of anonymous 'struct'
+  moc_compilation.cpp
+  Generating Code...
