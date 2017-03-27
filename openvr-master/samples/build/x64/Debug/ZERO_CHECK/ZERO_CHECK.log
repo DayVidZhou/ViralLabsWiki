@@ -1,6 +1,0 @@
-﻿  Checking Build System
-  CMake does not need to re-run because C:/openvr-master/samples/build/CMakeFiles/generate.stamp is up-to-date.
-  CMake does not need to re-run because C:/openvr-master/samples/build/driver_sample/CMakeFiles/generate.stamp is up-to-date.
-  CMake does not need to re-run because C:/openvr-master/samples/build/hellovr_opengl/CMakeFiles/generate.stamp is up-to-date.
-  CMake does not need to re-run because C:/openvr-master/samples/build/helloworldoverlay/CMakeFiles/generate.stamp is up-to-date.
-  CMake does not need to re-run because C:/openvr-master/samples/build/tracked_camera_openvr_sample/CMakeFiles/generate.stamp is up-to-date.
