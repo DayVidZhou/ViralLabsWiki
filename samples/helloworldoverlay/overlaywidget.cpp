@@ -4,22 +4,37 @@
 #include <QDateTime>
 #include <QElapsedTimer>
 #include <QPixmap>
+#include <cstdio>
+#include <tlhelp32.h>
+#include <QProcess>
 #include <stdio.h>
 #include <tchar.h>
 #include <psapi.h>
-#define Hour 1;
-#define Min 0;
-#define Sec 0;
+#include <fstream>
+std::string CurGame = "None";
+HANDLE ghandle;
+DWORD PID;
+int Hour;
+int Min;
+int Sec;
 OverlayWidget::OverlayWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::OverlayWidget)
 {
     ui->setupUi(this);
+    std::ifstream infile("C:/Users/Viral-Dev1/Documents/Assets/Assets/hours.txt");
+    int thehour;
+    if(infile.fail()){
+        qDebug()<<"DIDNT OPEN";
+    }
+    infile >> thehour;
+    Hour = thehour;
+    qDebug()<<"IT OPENED! THE HOUR IS " << thehour << "STATIc HOUR IS "<<Hour;
     QTimer *timer = new QTimer(this);
     connect(timer , SIGNAL(timeout()),this, SLOT(showTime()));
     timer->start(1000);
-    QPixmap pix("C:/Users/Viral-Dev1/Pictures/UI/ViralLogo.png");/*
-    ui->label->setPixmap(pix.scaled(400,400,Qt::KeepAspectRatio));*/
+    QPixmap pix("C:/openvr-master/samples/helloworldoverlay/pausemenuimages/BG.png");/*
+    ui->frame->setPixmap(pix.scaled(601,465,Qt::KeepAspectRatio));*/
 }
 
 OverlayWidget::~OverlayWidget()
@@ -46,7 +61,10 @@ void OverlayWidget::showTime(){
 
 void OverlayWidget::on_pushButton_clicked()
 {
-    QApplication::quit();
+    qDebug()<<QString::fromStdString(CurGame);
+    HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, 0,PID);
+    TerminateProcess(hProcess, 9);
+    CloseHandle(hProcess);
 }
 
 void OverlayWidget::processes()
@@ -58,7 +76,8 @@ void OverlayWidget::processes()
     std::string Holopoint = "Holopoint.exe";
     std::string fruitNinja = "FruitNinjaVR.exe";
     int games = 0;
-    QString CurGame;
+    QString game;
+    //QString CurGame;
     DWORD aProcesses[1024], cbNeeded, cProcesses;
     unsigned int i;
 
@@ -104,7 +123,8 @@ void OverlayWidget::processes()
     else if(games > 0){
         games = 0;
     }
-    ui->label_2->setText("Currently Playing : "+CurGame);
+    game = QString::fromStdString(CurGame);
+    ui->label_2->setText("Currently Playing : "+game);
 }
 
 bool OverlayWidget::matchProcessName( DWORD processID, std::string processName)
@@ -133,6 +153,10 @@ bool OverlayWidget::matchProcessName( DWORD processID, std::string processName)
     }
     // Compare process name with your string
     bool matchFound = !_tcscmp(szProcessName, processName.c_str() );
+
+    if(matchFound && ghandle != hProcess){
+        PID = processID;
+    }
 
     // Release the handle to the process.
     CloseHandle( hProcess );

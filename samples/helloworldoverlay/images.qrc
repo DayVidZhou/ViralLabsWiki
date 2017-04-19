@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pausemenuimages/BG.png</file>
+        <file>pausemenuimages/QuitHover.png</file>
+        <file>pausemenuimages/QuitNormal.png</file>
+        <file>pausemenuimages/QuitOnclick.png</file>
+        <file>pausemenuimages/TimerDesign.png</file>
+    </qresource>
+</RCC>

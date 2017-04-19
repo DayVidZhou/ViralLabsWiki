@@ -27,3 +27,6 @@ INCLUDEPATH += ../../headers
 LIBS += -L../../lib/win32 -lopenvr_api
 
 DESTDIR = ../bin/win32
+
+RESOURCES += \
+    pausemenuimages/images.qrc

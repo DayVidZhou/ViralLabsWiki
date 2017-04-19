@@ -5,6 +5,12 @@
 #include <QWidget>
 #include <QDebug>
 namespace Ui {
+extern std::string CurGame;
+extern HANDLE ghandle;
+extern DWORD PID;
+extern int Hour;
+extern int Min;
+extern int Sec;
 class OverlayWidget;
 }
 

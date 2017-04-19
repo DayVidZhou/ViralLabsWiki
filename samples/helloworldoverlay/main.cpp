@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     OverlayWidget *pOverlayWidget = new OverlayWidget;
-
+    pOverlayWidget->setStyleSheet("background-image: url(:/BG.png);");
     COpenVROverlayController::SharedInstance()->Init();
 
     COpenVROverlayController::SharedInstance()->SetWidget( pOverlayWidget );

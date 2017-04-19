@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>BG.png</file>
+        <file>QuitHover.png</file>
+        <file>QuitNormal.png</file>
+        <file>QuitOnclick.png</file>
+        <file>TimerDesign.png</file>
+    </qresource>
+</RCC>
