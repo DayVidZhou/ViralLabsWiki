@@ -22,14 +22,17 @@ OverlayWidget::OverlayWidget(QWidget *parent) :
     ui(new Ui::OverlayWidget)
 {
     ui->setupUi(this);
-    std::ifstream infile("C:/Users/Viral-Dev1/Documents/Assets/Assets/hours.txt");
-    int thehour;
+    std::ifstream infile("D:/Environment/EnvironmentProject/Assets/hours.txt");
     if(infile.fail()){
         qDebug()<<"DIDNT OPEN";
     }
-    infile >> thehour;
-    Hour = thehour;
-    qDebug()<<"IT OPENED! THE HOUR IS " << thehour << "STATIc HOUR IS "<<Hour;
+    int thetime;
+    infile >> thetime;
+    //int thehour = (int)thetime;
+    Hour = thetime/3600;
+    Min = (thetime - Hour*3600)/60;
+    Sec = thetime%60;
+    qDebug()<<"IT OPENED! THE TIME IS " << thetime << " STATIc HOUR IS "<<Hour <<" Min is " <<Min << " Sec is " << Sec;
     QTimer *timer = new QTimer(this);
     connect(timer , SIGNAL(timeout()),this, SLOT(showTime()));
     timer->start(1000);
