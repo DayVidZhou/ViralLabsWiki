@@ -1,6 +1,0 @@
-C:/openvr-master/samples/build/CMakeFiles/ALL_BUILD.dir
-C:/openvr-master/samples/build/CMakeFiles/ZERO_CHECK.dir
-C:/openvr-master/samples/build/driver_sample/CMakeFiles/driver_sample.dir
-C:/openvr-master/samples/build/hellovr_opengl/CMakeFiles/hellovr_opengl.dir
-C:/openvr-master/samples/build/helloworldoverlay/CMakeFiles/helloworldoverlay.dir
-C:/openvr-master/samples/build/tracked_camera_openvr_sample/CMakeFiles/tracked_camera_openvr_sample.dir
