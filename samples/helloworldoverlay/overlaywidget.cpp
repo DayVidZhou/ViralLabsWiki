@@ -22,6 +22,7 @@ OverlayWidget::OverlayWidget(QWidget *parent) :
     ui(new Ui::OverlayWidget)
 {
     ui->setupUi(this);
+    //opening the hours file to get the seconds
     std::ifstream infile("D:/Environment/EnvironmentProject/Assets/hours.txt");
     if(infile.fail()){
         qDebug()<<"DIDNT OPEN";
@@ -44,13 +45,15 @@ OverlayWidget::~OverlayWidget()
 {
     delete ui;
 }
-
+//function that deals with the timer
 void OverlayWidget::showTime(){
+    //initializes a timer
     QTime zero = QTime::QTime(0,0,0);
     static int hour = Hour;
     static int min = Min;
     static int sec = Sec;
     QTime time = QTime::QTime(hour,min,sec);
+    //decrements if timer isnt up
     if(time != zero){
         time = time.addSecs(-1);
     }
@@ -75,7 +78,18 @@ void OverlayWidget::processes()
     //qDebug()<<"PROCESSES RUNNN";
     // Get the list of process identifiers.
     std::string spacePirate = "SpacePirateVR.exe";
+    std::string A10VR = "A-10VR.exe";
+    std::string CyberThreat = "CyberThreat.exe";
+    std::string QuiVr = "QuiVr.exe";
+    std::string LightbladeVR = "LightbladeVR-Win64-Shipping.exe";
     std::string TheLab = "TheLab.exe";
+    std::string steamtours = "steamtours.exe";
+    std::string CrazyFishing = "CrazyFishing.exe";
+    std::string RecRoom = "Recroom_Release.exe";
+    std::string TalesOfEscape = "TalesOfEscape.exe";
+    std::string InMind2 = "InMind 2.exe";
+    std::string HauntedMineRide = "UE4Game-Win64-Shipping.exe";
+    std::string TheBellows = "TheBellows.exe";
     std::string Holopoint = "Holopoint.exe";
     std::string fruitNinja = "FruitNinjaVR.exe";
     int games = 0;
@@ -103,9 +117,64 @@ void OverlayWidget::processes()
                 CurGame = "Space Pirate";
                 games ++;
             }
+            else if(matchProcessName( aProcesses[i], A10VR )){
+                //qDebug()<<"A-10VR";
+                CurGame = "A-10 VR";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], CyberThreat )){
+                //qDebug()<<"CyberThreat";
+                CurGame = "CyberThreat";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], QuiVr )){
+                //qDebug()<<"QuiVr";
+                CurGame = "QuiVr";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], LightbladeVR )){
+                //qDebug()<<"LightbladeVR";
+                CurGame = "Lightblade VR";
+                games ++;
+            }
             else if(matchProcessName( aProcesses[i], TheLab )){
                 //qDebug()<<"THEEEE LABBB";
                 CurGame = "The Lab";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], steamtours )){
+                //qDebug()<<"steamtours";
+                CurGame = "Destinations";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], CrazyFishing )){
+                //qDebug()<<"CrazyFishing";
+                CurGame = "Crazy Fishing";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], RecRoom )){
+                //qDebug()<<"RecRoom";
+                CurGame = "RecRoom";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], TalesOfEscape )){
+                //qDebug()<<"TalesOfEscape";
+                CurGame = "Tales of Escape";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], InMind2 )){
+                //qDebug()<<"InMind 2";
+                CurGame = "InMind 2";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], HauntedMineRide )){
+                //qDebug()<<"HauntedMineRide";
+                CurGame = "Ghost Town Mine";
+                games ++;
+            }
+            else if(matchProcessName( aProcesses[i], TheBellows )){
+                //qDebug()<<"TheBellows";
+                CurGame = "The Bellows";
                 games ++;
             }
             else if(matchProcessName( aProcesses[i], Holopoint )){
@@ -120,12 +189,14 @@ void OverlayWidget::processes()
             }
         }
     }
+    //if no game then set none
     if(games == 0){
         CurGame = "None";
     }
     else if(games > 0){
         games = 0;
     }
+    //set the game title to the ui label
     game = QString::fromStdString(CurGame);
     ui->label_2->setText("Currently Playing : "+game);
 }

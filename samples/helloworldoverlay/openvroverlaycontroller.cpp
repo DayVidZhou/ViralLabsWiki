@@ -127,7 +127,7 @@ bool COpenVROverlayController::Init()
     if( vr::VROverlay() )
 	{
         std::string sKey = std::string( "sample." ) + m_strName.toStdString();
-        vr::VROverlayError overlayError = vr::VROverlay()->CreateDashboardOverlay( sKey.c_str(), m_strName.toStdString().c_str(), &m_ulOverlayHandle, &m_ulOverlayThumbnailHandle );
+        vr::VROverlayError overlayError = vr::VROverlay()->CreateDashboardOverlay( sKey.c_str(), m_strName.toStdString().c_str(), &m_ulOverlayHandle, &m_ulOverlayThumbnailHandle);
 		bSuccess = bSuccess && overlayError == vr::VROverlayError_None;
 	}
 
@@ -171,7 +171,7 @@ void COpenVROverlayController::Shutdown()
 //-----------------------------------------------------------------------------
 void COpenVROverlayController::OnSceneChanged( const QList<QRectF>& )
 {
-	// skip rendering if the overlay isn't visible
+     //skip rendering if the overlay isn't visible
     if( !vr::VROverlay() ||
         ( !vr::VROverlay()->IsOverlayVisible( m_ulOverlayHandle ) && !vr::VROverlay()->IsOverlayVisible( m_ulOverlayThumbnailHandle ) ) )
         return;
