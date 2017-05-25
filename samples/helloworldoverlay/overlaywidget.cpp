@@ -23,7 +23,7 @@ OverlayWidget::OverlayWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     //opening the hours file to get the seconds
-    std::ifstream infile("D:/Environment/EnvironmentProject/Assets/hours.txt");
+    std::ifstream infile("C:/Hours/hours.txt");
     if(infile.fail()){
         qDebug()<<"DIDNT OPEN";
     }
@@ -78,20 +78,27 @@ void OverlayWidget::processes()
     //qDebug()<<"PROCESSES RUNNN";
     // Get the list of process identifiers.
     std::string spacePirate = "SpacePirateVR.exe";
-    std::string A10VR = "A-10VR.exe";
-    std::string CyberThreat = "CyberThreat.exe";
-    std::string QuiVr = "QuiVr.exe";
-    std::string LightbladeVR = "LightbladeVR-Win64-Shipping.exe";
-    std::string TheLab = "TheLab.exe";
-    std::string steamtours = "steamtours.exe";
-    std::string CrazyFishing = "CrazyFishing.exe";
-    std::string RecRoom = "Recroom_Release.exe";
-    std::string TalesOfEscape = "TalesOfEscape.exe";
-    std::string InMind2 = "InMind 2.exe";
-    std::string HauntedMineRide = "UE4Game-Win64-Shipping.exe";
-    std::string TheBellows = "TheBellows.exe";
-    std::string Holopoint = "Holopoint.exe";
-    std::string fruitNinja = "FruitNinjaVR.exe";
+    std::string jeeboman = "Jeeboman.exe";
+    std::string a10 =  "A-10VR.exe";
+    std::string drummerTalent = "DrumGame.exe";
+    std::string accounting = "Accounting.exe";
+    std::string natureTreks = "Nature Treks VR.exe";
+    std::string theLab = "TheLab.exe";
+    std::string destinations = "steamtours.exe";
+    std::string cloudlands = "Cloudlands.exe";
+    std::string crazyFishing = "CrazyFishing.exe";
+    std::string recRoom = "Recroom_Release.exe";
+    std::string theBellows = "TheBellows.exe";
+    std::string vR2017 = "ShooterGame.exe";
+    std::string ghostTownMineRide = "HauntedMineRide.exe";
+    std::string talesOfEscape = "TalesOfEscape.exe";
+    std::string surgeonSimulator = "SurgeonVR.exe";
+    std::string portalStories = "Lift.exe";
+    std::string eyeInTheSky = "Eye in the Sky v0.2.exe";
+    std::string lightblade = "LightbladeVR.exe";
+    std::string quiVr = "QuiVr.exe";
+    std::string blueshift = "Blueshift.exe";
+    std::string acansCall = "AcansCall.exe";
     int games = 0;
     QString game;
     //QString CurGame;
@@ -111,83 +118,118 @@ void OverlayWidget::processes()
     for ( i = 0; i < cProcesses; i++ )
     {
         if( aProcesses[i] != 0 )
-        {
-            if(matchProcessName( aProcesses[i], spacePirate )){
-                //qDebug()<<"SPACE PIRATEEE";
-                CurGame = "Space Pirate";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], A10VR )){
-                //qDebug()<<"A-10VR";
-                CurGame = "A-10 VR";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], CyberThreat )){
-                //qDebug()<<"CyberThreat";
-                CurGame = "CyberThreat";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], QuiVr )){
-                //qDebug()<<"QuiVr";
-                CurGame = "QuiVr";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], LightbladeVR )){
-                //qDebug()<<"LightbladeVR";
-                CurGame = "Lightblade VR";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], TheLab )){
-                //qDebug()<<"THEEEE LABBB";
-                CurGame = "The Lab";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], steamtours )){
-                //qDebug()<<"steamtours";
-                CurGame = "Destinations";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], CrazyFishing )){
-                //qDebug()<<"CrazyFishing";
-                CurGame = "Crazy Fishing";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], RecRoom )){
-                //qDebug()<<"RecRoom";
-                CurGame = "RecRoom";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], TalesOfEscape )){
-                //qDebug()<<"TalesOfEscape";
-                CurGame = "Tales of Escape";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], InMind2 )){
-                //qDebug()<<"InMind 2";
-                CurGame = "InMind 2";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], HauntedMineRide )){
-                //qDebug()<<"HauntedMineRide";
-                CurGame = "Ghost Town Mine";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], TheBellows )){
-                //qDebug()<<"TheBellows";
-                CurGame = "The Bellows";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], Holopoint )){
-                //qDebug()<<"HOLOO PPOINTT";
-                CurGame = "Holopoint";
-                games ++;
-            }
-            else if(matchProcessName( aProcesses[i], fruitNinja )){
-                //qDebug()<<"FRUIITIT NINJAAA";
-                CurGame = "Fruit Ninja";
-                games ++;
-            }
-        }
+                {
+                    if(matchProcessName( aProcesses[i], spacePirate )){
+                        //qDebug()<<"SPACE PIRATE";
+                        CurGame = "Space Pirate";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], jeeboman )){
+                        //qDebug()<<"Jeeboman";
+                        CurGame = "Jeeboman";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], a10 )){
+                        //qDebug()<<"A10";
+                        CurGame = "A-10 VR";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], drummerTalent )){
+                        //qDebug()<<"Drummer Talent";
+                        CurGame = "Drummer Talent";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], accounting )){
+                        //qDebug()<<"Accounting";
+                        CurGame = "Accounting";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], natureTreks )){
+                        //qDebug()<<"Nature Treks";
+                        CurGame = "Nature Treks";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], theLab )){
+                        //qDebug()<<"Thelab";
+                        CurGame = "The Lab";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], destinations )){
+                        //qDebug()<<"Destinations";
+                        CurGame = "Destinations";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], cloudlands )){
+                        //qDebug()<<"Cloudlands";
+                        CurGame = "Cloudlands Minigolf";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], crazyFishing )){
+                        //qDebug()<<"Crazy Fishing";
+                        CurGame = "Crazy Fishing";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], recRoom )){
+                        //qDebug()<<"Rec Room";
+                        CurGame = "Rec Room";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], theBellows )){
+                        //qDebug()<<"The Bellows";
+                        CurGame = "The Bellows";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], vR2017 )){
+                        //qDebug()<<"2017 VR";
+                        CurGame = "2017 VR";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], ghostTownMineRide )){
+                        //qDebug()<<"Ghost Towm Mine Ride";
+                        CurGame = "Ghost Town Mine Ride";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], talesOfEscape )){
+                        //qDebug()<<"Tales of Escape";
+                        CurGame = "Tales of Escape";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], surgeonSimulator )){
+                        //qDebug()<<"Surgeon Simulator";
+                        CurGame = "Surgeon Simulator";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], portalStories )){
+                        //qDebug()<<"Portal Stories";
+                        CurGame = "Portal Stories";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], eyeInTheSky )){
+                        //qDebug()<<"Eye in the Sky";
+                        CurGame = "Eye in the Sky";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], lightblade )){
+                        //qDebug()<<"Lightblade";
+                        CurGame = "Lightblade";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], quiVr )){
+                        //qDebug()<<"QuiVr";
+                        CurGame = "QuiVr";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], blueshift )){
+                        //qDebug()<<"Blueshift";
+                        CurGame = "Blueshift";
+                        games ++;
+                    }
+                    else if(matchProcessName( aProcesses[i], acansCall )){
+                        //qDebug()<<"Acan's Call";
+                        CurGame = "Acan's Call";
+                        games ++;
+                    }
+                }
     }
     //if no game then set none
     if(games == 0){
